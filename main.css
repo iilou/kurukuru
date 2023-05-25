@@ -1,0 +1,110 @@
+body{
+    margin:0;
+    padding:0;
+
+    overflow-x:hidden;
+}
+
+:root{
+    --h: 300px;
+}
+
+#container-main{
+    background-color: #cc77cc;
+}
+
+#container-kuru{
+    background-color: blue;
+
+    height:var(--h);
+
+    border:10px double black;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+@keyframes kurukuru {
+    100%{
+        left:100%;
+    }
+}
+
+.kuru-1{
+    height: var(--h);
+    aspect-ratio: 1;
+
+    left:-300px;
+
+    position:absolute;
+
+    animation-name: kurukuru;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+.kuru-2{
+    height: var(--h);
+    aspect-ratio: 1;
+
+    left:-300px;
+
+    position:absolute;
+
+    animation-name: kurukuru;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+
+    animation-direction: reverse;
+}
+
+.tl{
+    margin:auto;
+    text-align:center;
+    padding-top:20px;
+    padding-bottom:10px;
+
+
+    font-size:50px;
+}
+
+.st{
+    margin:auto;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+
+
+    font-size:30px;
+}
+
+.pr{
+    margin:auto;
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+
+
+    font-size:15px;
+}
+
+.label{
+    width:fit-content;
+    margin:auto;
+    align-items: center;
+}
+
+label{
+    font-size:30px;
+    font-weight: bold;
+}
+
+
+
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
