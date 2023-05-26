@@ -6,70 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <script defer>
-        var audio1 = [];
-        var audio2 = [];
-
-        let i = 0;
-        const L = 100;
-
-        for(let i = 0; i < L; i++){
-            audio1.push(new Audio('kuru1.mp3'));
-            audio2.push(new Audio('kuru2.mp3'));
-        }
-
-        addEventListener("DOMContentLoaded", (event) => {
-
-            var slider = document.getElementById("slider");
-            var root = document.documentElement;
-            
-            slider.addEventListener("input", (e) => {
-                root.style.setProperty("--h", e.target.value + "px");
-                console.log("kurkur")
-            })
-
-        });
-
-        function next(i, l){
-            return i+1 == l ? 0 : i+1;
-        }
-
-        function kuru(cl, elm){
-
-            if(cl == "kuru-1") audio1[i].play()
-            if(cl == "kuru-2") audio2[i].play()
-
-            i = next(i, L);
-
-            const img = document.createElement("img");
-            img.classList.add(cl);
-            img.src = "star-rail-kuru.gif";
-
-            elm.appendChild(img);
-
-            setTimeout( function() {img.remove()}, 5000);
-
-        }
-    </script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div id="container-main" class="unselectable">
-        <h1 class="tl" id="title-main">Kuru Kuru</h1>
-        <h2 class="st" id="subtitle-main">Kuru-ing</h2>
-        <p class="pr" id="description-main">kurukuru kuruing kurukuru kuruing kurukuru kuruing kurukuru kuruing</p>
+
+        <div style="display:flex">
+            <button class="kuru-controls" onclick="create_kuru()">+ kurus</button>
+
+            <div style="width:max-content; margin:auto">
+                <h1 class="tl" id="title-main">Kuru Kuru</h1>
+                <h2 class="st" id="subtitle-main">Kuru-ing</h2>
+                <p class="pr" id="description-main">kurukuru kuruing kurukuru kuruing kurukuru kuruing</p>
+            </div>
+            
+            <button class="kuru-controls" onclick="delete_kuru()">- kurus</button>
+        </div>
+        
         
         <div class="label">
             <label for="slider" >Size:</label>
             <input type="range" id="slider" min="100" max="500" value="400"/>
         </div>
-
-        <div id="container-kuru" onclick="kuru('kuru-1', this)"></div>
-        <div id="container-kuru" onclick="kuru('kuru-2', this)"></div>
-        <div id="container-kuru" onclick="kuru('kuru-1', this)"></div>
-        <div id="container-kuru" onclick="kuru('kuru-2', this)"></div>
     </div>
-    <div>
-
+    <div style="display:flex; justify-content:center; width: 100%; margin-bottom:80px">
+        <button class="kuru-controls" onclick="create_kuru()">+ kurus</button>
+        <button class="kuru-controls" onclick="delete_kuru()">- kurus</button>
     </div>
 </body>
 </html>
